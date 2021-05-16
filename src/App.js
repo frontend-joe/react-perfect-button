@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import ThePerfectButton from "./ThePerfectButton";
+
+const StyledButton = styled(ThePerfectButton)`
+  margin-bottom: 1rem;
+  min-width: 208px;
+
+  &:last-child {
+    margin: 0;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <StyledButton>Primary</StyledButton>
+      <StyledButton isLoading>Loading</StyledButton>
+      <StyledButton isCompleted>
+        <span className="material-icons" style={{ marginRight: "8px" }}>
+          verified
+        </span>{" "}
+        Loaded
+      </StyledButton>
+      <StyledButton disabled>Disabled</StyledButton>
+    </>
   );
 }
 
